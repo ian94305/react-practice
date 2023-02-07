@@ -4,12 +4,28 @@
 <!-- 章節標題 --><div class="mb-4"><h1 class="mt-0 text-muted">使用資料驅動</h1><small>檔名：<code>variables.html</code></small></div>
 <!-- 🔥🔥練習開始🔥🔥 -->
 <div id="root"></div>
+
 <!-- template：https://getbootstrap.com/docs/5.2/components/card/ -->
 <script type="text/babel">
 console.log(React, ReactDOM);
-
-
+function App(){
+  const data={
+    imgUrl:'https://imgs.gvm.com.tw/upload/gallery/20221204/125075.jpg',
+    title:'card-img-top'
+  }
+  return <div className="card" >
+  <img src={data.imgUrl} className="card-img-top" alt="..."/>
+  <div className="card-body">
+    <h5 className="card-title">{data.title}</h5>
+    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" className="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+}
 const el = document.getElementById('root');
+const root=ReactDOM.createRoot(el);
+root.render(<App/>);
+
 </script>
 
 <!-- 🙇🙇練習結束🙇🙇 -->
